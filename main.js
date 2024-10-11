@@ -122,7 +122,7 @@ if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) 
 do {
 option = await question('[ ℹ️ ] Select an option:\n1. With QR code\n2. With 8-digit text code\n---> ')
 if (!/^[1-2]$/.test(opcion)) {
-console.log('[ ❗ ] Please select only 1 or 2.\n')
+console.log('[ 🇰🇪 ] Please select only 1 or 2.\n')
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${authFile}/creds.json`))
 }
 
@@ -131,7 +131,7 @@ const connectionOptions = {
     logger: Pino({ level: 'silent' }),
     printQRInTerminal: opcion === '1' || methodCodeQR,
     mobile: MethodMobile,
-    browser: opcion === '1' ? ['BumbleBee-Bot', 'Safari', '2.0.0'] : methodCodeQR ? ['BumbleBee-Bot', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
+    browser: opcion === '1' ? ['Tyraxes-Bot', 'Safari', '2.0.0'] : methodCodeQR ? ['Tyraxes-Bot', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
     auth: {
         creds: state.creds,
         keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: 'fatal' }).child({ level: 'fatal' })),
@@ -529,7 +529,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `[❗𝐈𝐍𝐅𝐎❗] 🐝 ᴀᴄᴛɪᴠᴇ ᴛɪᴍᴇ: ${uptime} 🍯ꜱᴛɪɴɢ ʟɪᴋᴇ🐝 ᴀ ʙᴇᴇ💖`;
+  const bio = `[彡𝙏𝙔𝙍𝘼𝙓𝙀𝙎彡] 🪀 uptime: ${uptime} 𝙏𝙃𝙀𝙀 𝙈𝙊𝙎𝙏 𝙃𝙄𝙂𝙃`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {
